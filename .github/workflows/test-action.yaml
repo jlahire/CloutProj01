@@ -1,0 +1,11 @@
+name: trying out an Action
+
+on: [push]
+
+jobs:
+ greet:
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: Just a test GitHub Action
+     run: echo "Testing Actions"
