@@ -1,0 +1,13 @@
+name: Just testing things out
+
+on: [push]
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  env:
+   CUSTOM_VAR: "Testing variables..."
+
+  steps:
+   - name: Print variable
+     run: echo "${CUSTOM_VAR}"
