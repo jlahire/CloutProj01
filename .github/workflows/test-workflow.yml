@@ -1,0 +1,29 @@
+name: test Workflow
+
+on:
+ push:
+  branches: [main]
+ pull_request:
+  branches: [main]
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+
+  env:
+   PROJECT_ENV: "test-workflow"
+   AUTHOR: "Michael Pabst"
+   DATE: "10-15-2025"
+
+  steps:
+   - name: Checkout code
+     uses: actions/checkout@v4
+
+   - name: Display env var
+     run: |
+      echo "Words: $PROJECT_ENV"
+      echo "Author: $AUTHOR"
+      echo "DATE: $DATE"
+
+   - name: Test command
+     run: echo "joy on push/pr.."
